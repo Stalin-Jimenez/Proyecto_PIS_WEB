@@ -17,18 +17,18 @@ $Correo=$_SESSION['correo'];
             <span class="tooltip">Inicio</span>
         </li>
         <li>
-            <a href="#">
+            <a href="Prescripcionm.php">
                 <i class='bx bx-folder' ></i>
                 <span class="links_name">Prescripción Medica</span>
             </a>
             <span class="tooltip">Prescripción Medica</span>
         </li>
         <li>
-            <a href="#">
+            <a href="CitasM.php">
                 <i class='bx bx-user' ></i>
-                <span class="links_name">Usuario</span>
+                <span class="links_name">Citas Medica</span>
             </a>
-            <span class="tooltip">Usuario</span>
+            <span class="tooltip">Citas Medica</span>
         </li>
         <li>
             <a href="#">

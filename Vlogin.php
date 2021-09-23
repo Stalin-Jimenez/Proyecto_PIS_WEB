@@ -8,7 +8,7 @@ $consulta="SELECT usuariod, correod, claved FROM doctores WHERE correod='$correo
 $resultado= mysqli_query($conexion, $consulta);
 $filas= mysqli_num_rows($resultado);
 session_start();
-$_SESSION['correo'];
+$_SESSION['correo']=$correo;
 if($filas){
     header("location:Principal.php");
     
@@ -18,7 +18,7 @@ if($filas){
             alert('Datos Incorrectos');
         </script>
         <?php
-            include './Principal.html';
+            include './index.php';
            
 }
 }else{
