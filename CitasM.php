@@ -56,11 +56,10 @@
                                     </tr>
                                 </table>
                                 <?php
-                                
                                 $direccionT = $datos['direccion'];
                                 $institucionT = $datos['institucion'];
-                                $_SESSION['iddoctores']=$iddoctores = $datos['iddoctores'];
-                                $_SESSION['idusuarios']=$idusuarios;
+                                $_SESSION['iddoctores'] = $iddoctores = $datos['iddoctores'];
+                                $_SESSION['idusuarios'] = $idusuarios;
                             }
                         } else {
                             ?>
@@ -83,7 +82,7 @@
             <div class="fadeIn fourth" style="width: 100%; height: 50% ; padding: 1%; border-style: solid; border-color: #56baed">
                 <?php
                 if (!empty($idusuarios)) {
-                    $consultam = "SELECT institucion, fecha, direccion, usuariod, correod, usuario, correo FROM citasmp INNER JOIN doctores ON citasmp.idcitasmp = doctores.iddoctores INNER JOIN usuarios ON citasmp.idcitasmp = usuarios.idusuarios WHERE usuarios_idusuarios='$idusuarios'";
+                    $consultam = "SELECT institucion,fecha,direccion, usuariod, correod, usuario, correo FROM citasmp INNER JOIN doctores ON citasmp.idcitasmp INNER JOIN usuarios ON citasmp.idcitasmp WHERE usuarios_idusuarios='$idusuarios';";
                     $resultadom = mysqli_query($conexion, $consultam);
                     $filasm = mysqli_num_rows($resultadom);
                     if ($filasm) {
@@ -98,7 +97,8 @@
                                 <tr>
                                     <td><h4>Paciente: <?php echo$datosm['usuario'] ?></h4></td>
                                     <td><h4>Doctor: <?php echo$datosm['usuariod'] ?></h4></td>
-                                    <td><h4>Correo: <?php echo$datosm['correod'] ?></h4></td>                                
+                                    <td><h4>Correo: <?php echo$datosm['correod'] ?></h4></td>
+                                    <h4>===========================================================================================================================</h4>
                                 </tr>
                             </table>
                             <?php
@@ -135,9 +135,8 @@
                     $institucion = $_POST['institucion'];
                     $direccion = $_POST['direccion'];
                     $fecha = $_POST['fecha'];
-                    
-                    $idd=$_SESSION['iddoctores'];
-                    $idu=$_SESSION['idusuarios'];
+                    $idd = $_SESSION['iddoctores'];
+                    $idu = $_SESSION['idusuarios'];
                     $sql = "INSERT INTO citasmp (institucion, fecha, direccion, doctores_iddoctores, usuarios_idusuarios) VALUES ('$institucion','$fecha','$direccion','$idd','$idu')";
                     $resultadoinset = mysqli_query($conexion, $sql);
                     if ($resultadoinset) {

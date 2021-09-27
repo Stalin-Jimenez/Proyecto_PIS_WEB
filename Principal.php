@@ -53,6 +53,7 @@
                             </table>
                             <?php
                             $idusuarios = $datos['idusuarios'];
+                            $_SESSION['idusuarios'] = $idusuarios;
                         }
                     } else {
                         ?>
@@ -103,10 +104,11 @@
                         <div class="fadeIn fourth" style="width: 100%; height: 50% ; padding: 1%; border-style: solid; border-color: #56baed">
                             <table>
                                 <tr>
-                                   <td><h4>Diagnostico: <?php echo$datosm['diagnostico'] ?></h4></td> 
+                                    <td><h4>Diagnostico: <?php echo$datosm['diagnostico'] ?></h4></td> 
                                 </tr>
                             </table>
                             <?php
+                            $_SESSION['iddoctores'] = $datosm['iddoctores'];
                         }
                     } else {
                         ?>
